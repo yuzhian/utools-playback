@@ -1,0 +1,11 @@
+{
+  "main": "index.html",
+  "logo": "favicon.png",
+  "features": [
+    {
+      "code": "动作回放",
+      "explain": "动作回放",
+      "cmds": ["动作回放", "动作", "回放", "鼠标", "光标", "playback"]
+    }
+  ]
+}
