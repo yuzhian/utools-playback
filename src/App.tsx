@@ -66,7 +66,6 @@ export default function App() {
 
   // 按下快捷键注册
   document.onkeydown = e => {
-    console.log(e)
     if (keymap.map(([k]) => k).includes(e.key)) {
       const { x, y } = window.utools?.getCursorScreenPoint?.() || { x: 0, y: 0 }
       setActions([...actions, [e.key, x, y, delay]])
@@ -82,7 +81,7 @@ export default function App() {
   return (
     <Grid2 container spacing={2}>
       <Grid2 xs={8}>
-        <List subheader={<ListSubheader>操作列表</ListSubheader>} style={{ height: 'calc(100vh - 2.375rem)', overflowX: 'scroll' }}>
+        <List subheader={<ListSubheader>操作列表</ListSubheader>} style={{ height: 'calc(100vh - 2.375rem)', overflowY: 'scroll' }}>
           {actions.map(([key, x, y, ms], index) => (
             <ListItemButton key={index}>
               <ListItemText primary={`${keymap.find(item => item[0] === key)?.[1]} (x:${x} y:${y})`} />
@@ -143,7 +142,7 @@ export default function App() {
             重新进入此插件应用即可停止回放
             <Stack spacing={1}>
               {keymap.map(([k, n]) => (
-                <Chip avatar={<Avatar style={{ backgroundColor: blue[700], color: 'white' }}>{k}</Avatar>} label={n} />
+                <Chip key={k} avatar={<Avatar style={{ backgroundColor: blue[700], color: 'white' }}>{k}</Avatar>} label={n} />
               ))}
             </Stack>
           </Alert>
