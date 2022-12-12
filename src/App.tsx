@@ -37,7 +37,7 @@ type Action = [key: string, x: number, y: number, ms: number]
 const keymap: Array<Execution> = [
   ['p', '左键双击', window.utools?.simulateMouseDoubleClick],
   ['[', '左键单击', window.utools?.simulateMouseClick],
-  // [']', '右键单击', window.utools?.simulateMouseRightClick],
+  [']', '右键单击', window.utools?.simulateMouseRightClick],
 ]
 
 // 操作函数map
